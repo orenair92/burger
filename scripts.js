@@ -29,8 +29,8 @@ function burger(){
 	var navbar = $("#navbar");
 	//нажатие по бургеру
 		burger.click(function() {
-			 //$("#navbar, #burger").toggleClass("on");
-		 navbar.slideToggle();
+			 $("#navbar, #burger").toggleClass("on");
+		 ?//navbar.slideToggle();
 		 //console.log(burger);
 
 		});
