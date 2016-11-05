@@ -1,5 +1,5 @@
 /*выдвигающее меню*/
-#burger{
+/*#burger{
 	position: relative;
     border: none;
     background: none;
@@ -113,10 +113,94 @@
 	line-height: 4;
 	background: #fff;
 }
-/*выдвигающее меню*/
+выдвигающее меню*/
 
 /*разворачивающе меню*/
-
+#burger{
+	position: relative;
+    border: none;
+    background: none;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    display: inline-block;
+}
+#burger span, #burger span:before, #burger span:after{
+	width: 24px;
+    height: 4px;
+    background-color: #333;
+    backface-visibility: hidden;
+    border-radius: 0;
+}
+#burger span{
+	position: relative;
+	margin:auto;
+	display: block;
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+	-webkit-transition: .3s all ease;
+    -moz-transition: .3s all ease;
+    -ms-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease; 
+}
+#burger span:before{
+	content: "";
+    position: absolute;
+    left: 0;
+    top: -8px;
+    -webkit-transition: .3s all ease;
+    -moz-transition: .3s all ease;
+    -ms-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease; 
+}
+#burger span:after{
+	content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    -webkit-transition: .3s all ease;
+    -moz-transition: .3s all ease;
+    -ms-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease; 
+}
+#burger.on span:before{
+	display: none
+}
+#burger.on span:after{
+	top:0;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+#burger.on span{
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+#navbar{
+	width: 100%;
+    overflow-y: auto;
+   	max-height: 0px;
+    -webkit-transition: max-height .3s ease;
+    -moz-transition: max-height .3s ease;
+    -ms-transition: max-height .3s ease;
+    -o-transition: max-height .3s ease;
+    transition: max-height .3s ease;
+}
+#navbar.on{
+	max-height: 500px;
+}
 /*разворачивающе меню*/
 .arrow_box{
 	position: absolute;
