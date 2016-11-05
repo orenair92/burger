@@ -6,6 +6,8 @@
     outline: none;
     width: 30px;
     height: 30px;
+    padding: 0;
+    display: inline-block;
 }
 #burger span, #burger span:before, #burger span:after{
 	width: 24px;
@@ -60,10 +62,10 @@
 	
 }
 #burger.on span:before, #burger.on span:after{
-	top: 0;
     width: 15px;
 }
 #burger.on span:before{
+	top:-5px;
 	-webkit-transform: rotate3d(0, 0, 1, -40deg);
 	-moz-transform: rotate3d(0, 0, 1, -40deg);
 	-ms-transform: rotate3d(0, 0, 1, -40deg);
@@ -72,14 +74,90 @@
 	
 }
 #burger.on span:after{
+	top:5px;
 	-webkit-transform: rotate3d(0, 0, 1, 40deg);
 	-moz-transform: rotate3d(0, 0, 1, 40deg);
 	-ms-transform: rotate3d(0, 0, 1, 40deg);
 	-o-transform: rotate3d(0, 0, 1, 40deg);
 	transform: rotate3d(0, 0, 1, 40deg);
-	
+}
+#navbar{
+	position: fixed;
+	width: 234px;
+	left: -234px;
+	top: 0;
+	z-index: 100;
+    height: 100%;
+    min-height: 100vh;
+    overflow-y: auto;
+    margin-top: 48px;
+    -webkit-transition: left .3s ease;
+    -moz-transition: left .3s ease;
+    -ms-transition: left .3s ease;
+    -o-transition: left .3s ease;
+    transition: left .3s ease;
+    box-shadow: 0 0 10px #ccc;
+}
+#navbar.on{
+	left: 0;
+}
+.fixed-bar{
+	position: fixed;
+	z-index: 101;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 48px;
+	box-shadow: 0 0 10px #ccc;
+	padding: 0 10px;
+	line-height: 4;
+	background: #fff;
 }
 /*выдвигающее меню*/
 
 /*разворачивающе меню*/
+
 /*разворачивающе меню*/
+.arrow_box{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	cursor: pointer;
+}
+.arrow {
+	width: 0;
+    height: 0;
+    border: 9px solid transparent;
+    border-top-color: #333;
+    border-bottom: 0;
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 25%;
+}
+#toggle-menu,ul{
+	list-style: none;
+	padding-left: 0;
+}
+#toggle-menu ul{
+	display: none;
+	padding-left: 10px;
+}
+#toggle-menu ul.on{
+	display: block;
+}
+#toggle-menu li{
+	position: relative;
+}
+#toggle-menu li a{
+	display: inline-block;
+	padding: 11px 30px 11px 16px;
+	width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    text-decoration: none;
+}
+

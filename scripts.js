@@ -27,30 +27,38 @@ function burger(){
 
 	var burger = $("#burger");
 	var navbar = $("#navbar");
-	//нажатие по бургеру
-		burger.click(function() {
-			 $("#navbar, #burger").toggleClass("on");
-		 ?//navbar.slideToggle();
-		 //console.log(burger);
 
-		});
-
-		//клик по внешней области
-		$(document).mouseup(function (e){ // событие клика по веб-документу
+	//клик по внешней области
+	$(document).click(function (e){ // событие клика по веб-документу
 			if(navbar.hasClass("on")){
 				if (!navbar.is(e.target) // если клик был не по нашему блоку
 					&& !burger.is(e.target)
 				    && navbar.has(e.target).length === 0) { // и не по его дочерним элементам
 					$("#navbar, #burger").removeClass("on"); // скрываем его
+					console.log("document");
 				}
+			}else{
+				$("#navbar, #burger").addClass("on");	
 			}
 		});
 
+	//нажатие по бургеру
+		/*burger.click(function() {
+			 $("#navbar").toggleClass("on");
+			 $("#burger").toggleClass("on");
+		 //navbar.slideToggle();
+		 console.log("burger");
+
+		});*/
+
+		
 		//dropdownmenu
-		$("#navbar li div").click(function() {
+		$("#toggle-menu li .arrow_box").click(function() {
+			$(this).toggleClass("on");
 			$(this).next().toggleClass("on");
-			if($(this).parent("li").parent("#navbar").attr("id")){
-				$("#navbar > li > div").not(this).next().removeClass("on");
+			if($(this).parent("li").parent("#toggle-menu").attr("id")){
+				$("#toggle-menu > li > .arrow_box").not(this).removeClass("on");
+				$("#toggle-menu > li > .arrow_box").not(this).next().removeClass("on");
 			}
 		});
 };
